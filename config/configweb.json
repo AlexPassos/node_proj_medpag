@@ -1,0 +1,14 @@
+{
+    "development": {
+        "dialect": "postgres",
+        "port": 5432,
+        "host": "localhost",
+        "schema": "public",
+        "database": "nsolucoe_medpag",
+        "username": "nsolucoe_usermedpag",
+        "password": "[a23p10r78]*",
+        "logging": false
+    }
+
+}
+

@@ -1,0 +1,14 @@
+{
+    "development": {
+        "dialect": "postgres",
+        "port": 5432,
+        "host": "localhost",
+        "schema": "public",
+        "database": "BDMedpag",
+        "username": "postgres",
+        "password": "msgbox23*",
+        "logging": false
+    }
+
+}
+
