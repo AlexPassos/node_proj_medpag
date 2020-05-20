@@ -12,7 +12,6 @@ app.use(bodyParser.json());//só recebe json
 
 const indexRoute = require('./routes/index');
 const emails = require('./modules/emails/emails');
-const registros = require('./modules/registros/registros');
 const especialidades = require('./modules/especialidades/especialidades');
 const estados = require('./modules/estados/estados');
 const cidades = require('./modules/cidades/cidades');
@@ -28,7 +27,6 @@ app.use(function(req, res, next){
 //Carrega as rotas
 indexRoute.init(app);
 emails.init(app);
-registros.init(app);
 especialidades.init(app);
 estados.init(app);
 cidades.init(app);

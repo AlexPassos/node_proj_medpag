@@ -39,10 +39,10 @@ module.exports = (sequelize, DataTypes) => {
     })
     Cidades.associate = function (models) {      
         Cidades.belongsTo(models.Estados, {targetKey: 'id', foreignKey: 'idestados' })
-        Cidades.belongsToMany(models.Registros, {
-            through: 'registros',
-            foreignKey: 'idcidade'
-        });
+        // Cidades.belongsToMany(models.Registros, {
+        //     through: 'registros',
+        //     foreignKey: 'idcidade'
+        // });
     }
 
     return Cidades

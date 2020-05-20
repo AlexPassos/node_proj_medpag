@@ -4,9 +4,9 @@
         "port": 5432,
         "host": "localhost",
         "schema": "public",
-        "database": "nsolucoe_medpag",
-        "username": "nsolucoe_usermedpag",
-        "password": "[a23p10r78]*",
+        "database": "BDMedpag",
+        "username": "postgres",
+        "password": "msgbox23*",
         "logging": false
     }
 

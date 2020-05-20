@@ -2,8 +2,6 @@
 
 const emailService = require('../../../services/email-service');
 
-const model = require('../../../../bin/modelLoader');
-
 exports.postEmailRecuperacao = (req, res) => {
     try {
 
@@ -16,18 +14,17 @@ exports.postEmailRecuperacao = (req, res) => {
         Senha cadastrada é: <strong>${senha}</strong>`;
 
         var emailBody = montaEmail(titulo, nome, corpo);
+        
+        let assunto = 'Recuperação de senha Medpag';
 
-        emailService.send(
-            email,
-            'Recuperação de senha Medpag',
-            global.EMAIL_TMPL.replace('{0}', emailBody));
+        emailService.enviarEmail(email, assunto,  corpo, emailBody);
 
-        res.status(201).send({
-            message: 'E-mail enviado com sucesso'
-        });
+        res.status(201).send(
+            'E-mail enviado com sucesso'
+        );
 
     } catch (e) {
-        res.status(400).send({ message: 'Erro ao enviar', data: req.body });
+        res.status(400).send('Erro ao enviar');
     }
 };
 
@@ -107,6 +104,23 @@ exports.postEmailExame = (req, res) => {
             email,
             'Boleto Medpag',
             global.EMAIL_TMPL.replace('{0}', emailBody));
+
+        res.status(201).send({ message: 'E-mail enviado com sucesso' });
+
+    } catch (e) {
+        res.status(400).send({ message: 'Erro ao enviar', data: req.body });
+    }
+};
+
+exports.postEmailTeste = async (req, res) => {
+    try {
+
+          let para = "alexpassos@nsolucoesemti.com.br";
+          let assunto = 'Medpag teste';
+          let bodyTexto = 'Formato texto...';
+          let bodyHtml = '<b>Formato html...</b>';
+
+          emailService.enviarEmail(para, assunto,  bodyTexto, bodyHtml);
 
         res.status(201).send({ message: 'E-mail enviado com sucesso' });
 

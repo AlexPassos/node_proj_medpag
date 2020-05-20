@@ -30,10 +30,10 @@ module.exports = (sequelize, DataTypes) => {
 
     })
     Estados.associate = function (models) {        
-        Estados.belongsToMany(models.Registros, {
-            through: 'registros',
-            foreignKey: 'idestado'            
-        });
+        // Estados.belongsToMany(models.Registros, {
+        //     through: 'registros',
+        //     foreignKey: 'idestado'            
+        // });
         Estados.belongsToMany(models.Cidades, {
             through: 'cidades',
             foreignKey: 'idestados'            

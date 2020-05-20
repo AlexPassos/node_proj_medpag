@@ -10,8 +10,7 @@ let sequelize = new Sequelize(config.database, config.username, config.password,
 let db = {};
 
 //Criando um array do caminho dos modelos
-const models = [    
-    '../src/modules/registros/model/registros-model',
+const models = [        
     '../src/modules/especialidades/model/especialidades-model',
     '../src/modules/estados/model/estados-model',
     '../src/modules/cidades/model/cidades-model',
