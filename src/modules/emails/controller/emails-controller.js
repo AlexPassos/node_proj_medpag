@@ -112,6 +112,30 @@ exports.postEmailExame = (req, res) => {
     }
 };
 
+exports.postEmailValidacao = (req, res) => {
+    try {
+
+        const { nome, codigo, email } = req.body;
+
+        var titulo = 'Código de validação';
+
+        var corpo = `Seu código de validação é: <strong>${codigo}</strong>`;
+
+        var emailBody = montaEmail(titulo, nome, corpo);
+        
+        let assunto = 'Código de validação Medpag';
+
+        emailService.enviarEmail(email, assunto,  corpo, emailBody);
+
+        res.status(201).send(
+            'E-mail enviado com sucesso'
+        );
+
+    } catch (e) {
+        res.status(400).send('Erro ao enviar');
+    }
+};
+
 exports.postEmailTeste = async (req, res) => {
     try {
 
